@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import ClassComp from './ClassComp.js';
+import FuncComp from './FuncComp.js';
 
 function App() {
+  let [showFunc, setStateShowFunc] = useState(true);
+  let [showClass, setStateShowClass] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      Hello World!!
+      <input type="button" value={showFunc ? 'FuncComponent hide' : 'FuncComponent show'}
+        onClick={() => {
+          setStateShowFunc(!showFunc);
+        }}></input>
+      <input type="button" value={showClass ? 'ClassComponent hide' : 'ClassComponent show'}
+        onClick={() => {
+          setStateShowClass(!showClass);
+        }}></input>
+      {showFunc ? <FuncComp initNumber={2} /> : ""}
+      {showClass ? <ClassComp initNumber={2} /> : ""}
     </div>
   );
 }

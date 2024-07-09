@@ -1,5 +1,7 @@
 import { Component } from "react";
 
+const cssStyle = 'color:red';
+
 class ClassComp extends Component {
     constructor(props) {
         super(props);
@@ -9,11 +11,33 @@ class ClassComp extends Component {
         };
     }
 
+    componentWillMount(){
+        console.log("%cClass componentWillMount", cssStyle);
+    }
+
+    componentDidMount(){
+        console.log("%cClass componentDidMount", cssStyle);
+    }
+
     componentWillUnmount(){
-        console.log("componentWillUnmount")
+        console.log("%cClass componentWillUnmount", cssStyle);
+    }
+
+    shouldComponentUpdate(){
+        console.log("%cClass shouldComponentUpdate", cssStyle);
+        return true;
+    }
+
+    componentWillUpdate(){
+        console.log("%cClass componentWillUpdate", cssStyle);
+    }
+
+    componentDidUpdate(){
+        console.log("%cClass componentDidUpdate", cssStyle);
     }
 
     render() {
+        console.log("%crender", cssStyle);
         return (
             <div className="container">
                 <h2>class style component</h2>

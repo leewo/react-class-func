@@ -20,7 +20,7 @@ class ClassComp extends Component {
     }
 
     componentWillUnmount(){
-        console.log("%cClass componentWillUnmount", cssStyle);
+        console.log("%cClass componentWillUnmount!!", cssStyle);
     }
 
     shouldComponentUpdate(){
